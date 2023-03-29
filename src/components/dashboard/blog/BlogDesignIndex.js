@@ -45,12 +45,14 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
           </div>
         </div>
         <div className='image-container'>
-          <CldImage
-            width={1200}
-            height={600}
-            alt={heading}
-            src={state.images[0]?.public_id}
-          ></CldImage>
+          {state.images.length > 0 && (
+            <CldImage
+              width={1200}
+              height={600}
+              alt={heading}
+              src={state.images[0]?.public_id}
+            ></CldImage>
+          )}
         </div>
         <span className='description'>
           {description}{' '}
