@@ -64,7 +64,7 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
         </span>
       </div>
       {/* =========Body container====== */}
-      {!readMore && (
+      {/* {!readMore && (
         <div className='body-container'>
           <div className='body-heading-description'>
             <div className='body-heading'>{blogHeading}</div>
@@ -74,7 +74,7 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </Wrapper>
   )
 }
