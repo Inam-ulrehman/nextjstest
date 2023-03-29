@@ -39,10 +39,10 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
             <span>Written By :</span>
             <span> {author}</span>
           </div>
-          <div className='time'>
+          {/* <div className='time'>
             <span>Posted On :</span>
             <span>{formatDate(createdAt)}</span>
-          </div>
+          </div> */}
         </div>
         {/* <div className='image-container'>
           {state.images.length > 0 && (
