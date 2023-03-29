@@ -41,7 +41,7 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
           </div>
           <div className='time'>
             <span>Posted On :</span>
-            <span>{createdAt && formatDate(createdAt)}</span>
+            <span>{createdAt.split('T')[0]}</span>
           </div>
         </div>
         <div className='image-container'>
