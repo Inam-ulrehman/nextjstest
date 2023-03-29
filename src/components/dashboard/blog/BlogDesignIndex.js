@@ -39,12 +39,12 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
             <span>Written By :</span>
             <span> {author}</span>
           </div>
-          {/* <div className='time'>
+          <div className='time'>
             <span>Posted On :</span>
-            <span>{formatDate(createdAt)}</span>
-          </div> */}
+            {/* <span>{formatDate(createdAt)}</span> */}
+          </div>
         </div>
-        {/* <div className='image-container'>
+        <div className='image-container'>
           {state.images.length > 0 && (
             <CldImage
               width={1200}
@@ -53,18 +53,18 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
               src={state.images[0]?.public_id}
             ></CldImage>
           )}
-        </div> */}
-        {/* <span className='description'>
+        </div>
+        <span className='description'>
           {description}{' '}
           {readMore && (
             <Link href={`/blog/[id]`} as={`/blog/${path}`}>
               <span>Read More {Icons.link}</span>
             </Link>
           )}
-        </span> */}
+        </span>
       </div>
       {/* =========Body container====== */}
-      {/* {!readMore && (
+      {!readMore && (
         <div className='body-container'>
           <div className='body-heading-description'>
             <div className='body-heading'>{blogHeading}</div>
@@ -74,7 +74,7 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
             />
           </div>
         </div>
-      )} */}
+      )}
     </Wrapper>
   )
 }
