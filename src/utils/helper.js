@@ -46,6 +46,9 @@ export const formatPrice = (number) => {
 export const formatDate = (date) => {
   return moment(date).format('MMMM Do YYYY,h:mm a')
 }
+export const formatDateStatic = (date) => {
+  return moment(date).format('MMMM Do YYYY')
+}
 // ==========bill calculator========
 
 export const totalBill = (cart) => {

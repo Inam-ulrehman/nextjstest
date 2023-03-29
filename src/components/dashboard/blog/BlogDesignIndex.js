@@ -1,5 +1,5 @@
 import { Icons } from '@/styles/Icons'
-import { formatDate } from '@/utils/helper'
+import { formatDate, formatDateStatic } from '@/utils/helper'
 import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -41,7 +41,7 @@ const BlogDesignIndex = ({ blogs, readMore }) => {
           </div>
           <div className='time'>
             <span>Posted On :</span>
-            <span>{createdAt.split('T')[0]}</span>
+            <span>{formatDateStatic(createdAt)}</span>
           </div>
         </div>
         <div className='image-container'>
