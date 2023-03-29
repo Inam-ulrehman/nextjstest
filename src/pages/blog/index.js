@@ -46,7 +46,7 @@ const Blogs = ({ data }) => {
             {data.map((item) => {
               return (
                 <div className='blog-holder' key={item._id}>
-                  <BlogDesign blogs={item} readMore={true} />
+                  {/* <BlogDesign blogs={item} readMore={true} /> */}
                 </div>
               )
             })}
