@@ -32,13 +32,13 @@ const Wrapper = styled.div`
   }
   @media (max-width: 768px) {
     display: grid;
-
+    min-height: auto;
     aside {
       margin-top: 0;
-      position: sticky;
-      top: 11.5%;
-
       height: fit-content;
+    }
+    section {
+      margin-top: 0rem;
     }
   }
 `

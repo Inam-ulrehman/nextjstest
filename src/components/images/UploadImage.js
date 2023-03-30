@@ -163,6 +163,9 @@ const Wrapper = styled.div`
       margin: 5px;
       border: 2px solid var(--grey-3);
       display: grid;
+      img {
+        object-fit: contain;
+      }
       .btn {
         border-top-left-radius: 0;
         border-top-right-radius: 0;

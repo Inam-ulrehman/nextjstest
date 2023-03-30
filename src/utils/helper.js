@@ -46,6 +46,7 @@ export const formatPrice = (number) => {
 export const formatDate = (date) => {
   return moment(date).format('MMMM Do YYYY,h:mm a')
 }
+//  for back end data to avoid 425 react error
 export const formatDateStatic = (date) => {
   return moment(date).format('MMMM Do YYYY')
 }

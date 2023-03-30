@@ -28,14 +28,14 @@ const NavbarLinks = () => {
 
 const Wrapper = styled.div`
   .heading {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--primary-2);
     border-bottom: 2px solid var(--primary-5);
     width: fit-content;
     margin: 0 auto;
   }
   ul {
-    font-weight: 700;
+    font-weight: 400;
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 300px;

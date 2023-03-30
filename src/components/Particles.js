@@ -3,7 +3,7 @@ import React from 'react'
 import { useCallback } from 'react'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
-const Sample = () => {
+const Particles = () => {
   const particlesInit = useCallback(async (engine) => {
     console.log(engine)
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -70,6 +70,7 @@ const Sample = () => {
             outModes: {
               default: 'bounce',
             },
+
             random: false,
             speed: 2,
             straight: false,
@@ -80,6 +81,9 @@ const Sample = () => {
               area: 800,
             },
             value: 80,
+          },
+          zinIndex: {
+            value: -1,
           },
           opacity: {
             value: 0.5,
@@ -100,4 +104,4 @@ const Sample = () => {
 Sample.getLayout = function (page) {
   return <SampleNestedLayout>{page}</SampleNestedLayout>
 }
-export default Sample
+export default Particles

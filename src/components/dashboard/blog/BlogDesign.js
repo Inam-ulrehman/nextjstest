@@ -1,5 +1,5 @@
 import { Icons } from '@/styles/Icons'
-import { formatDate } from '@/utils/helper'
+import { formatDateStatic } from '@/utils/helper'
 import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -10,15 +10,7 @@ const initialState = {
 }
 const BlogDesign = ({ blogs, readMore }) => {
   const [state, setState] = useState(initialState)
-  const {
-    image,
-    heading,
-    description,
-    blogHeading,
-    blogDescription,
-    author,
-    createdAt,
-  } = blogs
+  const { image, heading, description, blogHeading, blogDescription } = blogs
 
   const path = heading.split(' ').join('-').toLowerCase()
   useEffect(() => {
@@ -37,15 +29,10 @@ const BlogDesign = ({ blogs, readMore }) => {
         <div className='name-time'>
           <div className='name'>
             <span>Written By :</span>
-            <span> {!author ? 'inam' : author}</span>
+            <span>inam</span>
           </div>
           <div className='time'>
-            <span>Posted On :</span>{' '}
-            <span>
-              {createdAt.length > 0
-                ? formatDate(createdAt)
-                : formatDate(new Date())}
-            </span>
+            <span>Posted On :</span> <span>{formatDateStatic(new Date())}</span>
           </div>
         </div>
         <div className='image-container'>
@@ -106,8 +93,8 @@ const Wrapper = styled.div`
     }
     .description {
       display: block;
-      font-size: 1.1rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 400;
       :first-letter {
         text-transform: capitalize;
       }
@@ -127,7 +114,7 @@ const Wrapper = styled.div`
     margin-top: 1rem;
     .name {
       span:nth-child(2) {
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-weight: 500;
         border-bottom: 2px solid var(--grey-7);
         margin-left: 1rem;
@@ -135,7 +122,7 @@ const Wrapper = styled.div`
     }
     .time {
       span:nth-child(2) {
-        text-transform: uppercase;
+        text-transform: capitalize;
         margin-left: 1rem;
         border-bottom: 2px solid var(--grey-7);
         font-weight: 500;
@@ -166,6 +153,12 @@ const Wrapper = styled.div`
     p {
       :first-letter {
         text-transform: capitalize;
+      }
+      a {
+        color: var(--primary-5);
+        :hover {
+          color: var(--primary-6);
+        }
       }
     }
   }

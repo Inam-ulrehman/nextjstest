@@ -18,6 +18,8 @@ const FeatureSection = () => {
 }
 
 const Wrapper = styled.div`
+  z-index: 1;
+  background-color: var(--grey-05);
   .heading-title {
     font-weight: 700;
     text-align: center;

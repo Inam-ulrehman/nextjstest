@@ -113,7 +113,7 @@ const Wrapper = styled.nav`
         }
       }
       a {
-        font-weight: 500;
+        font-weight: 400;
       }
       svg {
         margin-bottom: -0.6rem;
@@ -124,11 +124,7 @@ const Wrapper = styled.nav`
   .active {
     a {
       color: var(--primary-5);
-      border-radius: var(--radius-2);
-      padding: 0.75rem;
     }
-
-    border-bottom: 2px solid var(--blue-5);
   }
   @media (min-width: 620px) {
     margin-right: 1rem;

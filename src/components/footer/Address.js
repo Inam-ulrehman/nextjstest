@@ -29,7 +29,7 @@ const Address = () => {
 }
 const Wrapper = styled.div`
   .heading {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--primary-2);
     border-bottom: 2px solid var(--primary-5);
     width: fit-content;
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
     justify-content: center;
   }
   a {
-    font-weight: 700;
+    font-weight: 400;
     color: var(--white);
     :hover {
       color: var(--primary-2);

@@ -1,13 +1,9 @@
-import { BlogDesign } from '@/components/dashboard/blog'
 import BlogDesignIndex from '@/components/dashboard/blog/BlogDesignIndex'
 import dbConnect from '@/lib/dbConnect'
 import Blog from '@/models/Blog'
-import { Icons } from '@/styles/Icons'
 import { websiteContent } from '@/utils/data'
 import { CldImage } from 'next-cloudinary'
 import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
 import styled from 'styled-components'
 
 const src = 'Inamwebsolutions-nextjs/nnzlsqedlgak3awdem5y'
@@ -15,10 +11,12 @@ const Blogs = ({ data }) => {
   return (
     <>
       <Head>
-        <title>Blog</title>
+        <title>
+          Design Insights: Expert Tips and Latest Trends in Website Design
+        </title>
         <meta
           name='description'
-          content=' Stay Informed and Up-to-Date with Our Thought-Provoking Blog Posts'
+          content=' Stay ahead of the curve with our Design Insights blog. Our team of experts shares valuable tips, techniques, and insights on the latest trends in website design.'
         />
         <link rel='canonical' href={`${websiteContent.seo.websiteName}/blog`} />
       </Head>
@@ -28,8 +26,9 @@ const Blogs = ({ data }) => {
             <div className='heading-titles'>
               <h1>Our Comprehensive Blogging Service</h1>
               <h2>
-                Stay informed and up-to-date with our thought-provoking blog
-                posts
+                Stay ahead of the curve with our Design Insights blog. Our team
+                of experts shares valuable tips, techniques, and insights on the
+                latest trends in website design.
               </h2>
             </div>
             <div className='heading-image'>
@@ -48,7 +47,6 @@ const Blogs = ({ data }) => {
               return (
                 <div className='blog-holder' key={item._id}>
                   <BlogDesignIndex blogs={item} readMore={true} />
-                  {/* <BlogDesign blogs={item} readMore={true} /> */}
                 </div>
               )
             })}
@@ -72,6 +70,7 @@ export async function getStaticProps() {
 const Wrapper = styled.div`
   .heading-container {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
@@ -86,7 +85,7 @@ const Wrapper = styled.div`
     }
     h2 {
       max-width: 700px;
-      font-weight: 500;
+      font-weight: 400;
       font-size: var(--large-text);
       margin-left: 0;
     }
@@ -94,21 +93,19 @@ const Wrapper = styled.div`
   }
   .heading-image {
     display: grid;
-    justify-content: center;
+    height: 100%;
+    place-content: center;
 
     background: linear-gradient(
       90deg,
-      rgba(241, 243, 245, 1) 0%,
-      var(--primary-8) 100%
+      var(--grey-05) 0%,
+      var(--grey-4) 50%,
+      var(--grey-5) 100%
     );
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
     }
-  }
-  /* body */
-  .blog-body {
-    padding: 3rem;
   }
 
   /* desktop only */
@@ -127,6 +124,7 @@ const Wrapper = styled.div`
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+      width: 93vw;
     }
   }
 
@@ -151,8 +149,9 @@ const Wrapper = styled.div`
     .heading-image {
       background: linear-gradient(
         180deg,
-        rgba(241, 243, 245, 1) 0%,
-        var(--primary-8) 100%
+        var(--grey-05) 0%,
+        var(--grey-4) 50%,
+        var(--grey-5) 100%
       );
     }
   }

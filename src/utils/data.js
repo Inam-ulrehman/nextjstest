@@ -391,7 +391,7 @@ export const servicesData = [
     id: 5,
     icon: 'test',
     color: 'pink',
-    title: 'testing & qa',
+    title: 'testing and qa very important',
     image:
       'https://res.cloudinary.com/inam6530/image/upload/v1678538863/Inamwebsolutions-nextjs/4_jsm3oj.png',
     description:
@@ -486,7 +486,7 @@ export const servicesData = [
     id: 6,
     icon: 'devops',
     color: 'blue',
-    title: 'Devops',
+    title: 'Devops business demand',
     image:
       'https://res.cloudinary.com/inam6530/image/upload/v1678720455/Inamwebsolutions-nextjs/Fresh_INAMWEBSOLUTIONS_4_dijach.png',
     description:

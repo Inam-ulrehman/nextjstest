@@ -48,6 +48,8 @@ const Wrapper = styled.ul`
     }
   }
   @media (max-width: 768px) {
+    top: 0%;
+
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -57,7 +59,6 @@ const Wrapper = styled.ul`
       }
       a {
         padding: 5px;
-        background-color: var(--grey-4);
         margin-right: 5px;
         :hover {
         }

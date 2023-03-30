@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
 
   .heading {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--primary-2);
     border-bottom: 2px solid var(--primary-5);
     width: fit-content;

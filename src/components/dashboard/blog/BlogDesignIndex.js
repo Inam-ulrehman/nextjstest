@@ -100,8 +100,8 @@ const Wrapper = styled.div`
     }
     .description {
       display: block;
-      font-size: 1.1rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 400;
       :first-letter {
         text-transform: capitalize;
       }
@@ -109,7 +109,6 @@ const Wrapper = styled.div`
         color: var(--primary-4);
         span {
           display: inline-block;
-          margin: 0 0.5rem;
         }
         :hover {
           color: var(--primary-6);
@@ -121,7 +120,7 @@ const Wrapper = styled.div`
     margin-top: 1rem;
     .name {
       span:nth-child(2) {
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-weight: 500;
         border-bottom: 2px solid var(--grey-7);
         margin-left: 1rem;
@@ -129,7 +128,7 @@ const Wrapper = styled.div`
     }
     .time {
       span:nth-child(2) {
-        text-transform: uppercase;
+        text-transform: capitalize;
         margin-left: 1rem;
         border-bottom: 2px solid var(--grey-7);
         font-weight: 500;

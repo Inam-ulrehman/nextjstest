@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const LandingWrapper = styled.div`
+  background-color: var(--grey-05);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -8,18 +9,12 @@ export const LandingWrapper = styled.div`
   .text-box {
   }
   .image-box {
-    display: grid;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(
-      90deg,
-      rgba(241, 243, 245, 1) 0%,
-      var(--primary-8) 100%
-    );
+    height: calc(100vh - 94px);
+
     img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
     }
   }
   @media (max-width: 820px) {
@@ -29,22 +24,38 @@ export const LandingWrapper = styled.div`
     .text-box {
       padding: 1rem;
       .mobile-image {
-        background: linear-gradient(
-          180deg,
-          rgba(241, 243, 245, 1) 0%,
-          var(--primary-8) 100%
-        );
       }
     }
     .image-box {
       text-align: center;
     }
   }
+  /* desktop only */
   @media (min-width: 620px) {
+    .text-box {
+      .first-heading {
+        font-weight: 600 !important;
+      }
+      .second-heading {
+      }
+      p {
+        font-size: large;
+      }
+    }
+    .image-box {
+      background: linear-gradient(
+        90deg,
+        var(--grey-05) 0%,
+        var(--grey-4) 50%,
+        var(--grey-5) 100%
+      );
+    }
     .mobile-image {
       display: none;
     }
   }
+
+  /* mobile only */
   @media (max-width: 620px) {
     text-align: center;
     width: 100vw;
@@ -52,6 +63,14 @@ export const LandingWrapper = styled.div`
     .mobile-image {
       width: 100vw;
       overflow: hidden;
+
+      background: linear-gradient(
+        180deg,
+        var(--grey-05) 0%,
+        var(--grey-4) 50%,
+        var(--grey-5) 100%
+      );
+
       img {
         margin: 0 auto;
         width: 95%;
