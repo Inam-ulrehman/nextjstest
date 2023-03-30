@@ -1,5 +1,6 @@
-import { auth } from './auth'
-import { authAdmin } from './authAdmin'
-import { isAuthValid } from './isAuthValid'
+import { authApi } from './authApi'
+import { authAdminApi } from './authAdminApi'
+import { authDashboard } from './authDashboard'
+import { authAdminDashboard } from './authAdminDashboard'
 
-export { isAuthValid, auth, authAdmin }
+export { authAdminDashboard, authDashboard, authApi, authAdminApi }

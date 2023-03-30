@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import * as jose from 'jose'
 
-export const isAuthValid = async (request) => {
+export const authAdminDashboard = async (request) => {
   let token = request.cookies.get('token')?.value
   if (token === undefined || !token) {
     return NextResponse.redirect(
@@ -11,7 +11,11 @@ export const isAuthValid = async (request) => {
   try {
     await jose.jwtVerify(
       token,
-      new TextEncoder().encode(process.env.JWT_SECRET)
+      new TextEncoder().encode(process.env.JWT_SECRET),
+      {
+        issuer: 'admin',
+        audience: 'urn:example:audience',
+      }
     )
     return NextResponse.next()
   } catch (error) {

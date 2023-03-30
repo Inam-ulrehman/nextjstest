@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { BadRequestError } from '../errors'
 import * as jose from 'jose'
 
-export const auth = async (req) => {
+export const authApi = async (req) => {
   const authHeader = req.headers.get('authorization')
 
   if (!authHeader || !authHeader.startsWith('Bearer')) {

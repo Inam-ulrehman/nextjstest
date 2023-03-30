@@ -38,10 +38,13 @@ const Login = () => {
       try {
         setState({ ...state, isLoading: true })
         const result = await customFetch.post('users/login', state)
-        router.push('/dashboard')
+        if (result.data.msg.user.role !== 'admin') {
+          router.push('/user/dashboard')
+        } else {
+          router.push('/dashboard')
+        }
         const token = result.data.msg.user.token
         Cookies.set('token', token, { expires: 7 })
-        setItemInLocalStorage('user', result.data.msg.user)
         setState({ ...state, isLoading: false })
       } catch (error) {
         setState({ ...state, isLoading: false })
@@ -53,10 +56,13 @@ const Login = () => {
       try {
         setState({ ...state, isLoading: true })
         const result = await customFetch.post('users/register', state)
-        router.push('/dashboard')
+        if (result.data.msg.user.role !== 'admin') {
+          router.push('/user/dashboard')
+        } else {
+          router.push('/dashboard')
+        }
         const token = result.data.msg.user.token
         Cookies.set('token', token, { expires: 7 })
-        setItemInLocalStorage('user', result.data.msg.user)
         setState({ ...state, isLoading: false })
       } catch (error) {
         setState({ ...state, isLoading: false })

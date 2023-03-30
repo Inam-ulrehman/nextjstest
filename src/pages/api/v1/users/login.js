@@ -12,6 +12,7 @@ export default async function handler(req, res) {
     const { email, password } = body
 
     const user = await Users.findOne({ email })
+
     if (!user) {
       return res.status(StatusCodes.NOT_FOUND).json({ msg: 'No user found.' })
     }
@@ -27,6 +28,6 @@ export default async function handler(req, res) {
 
     return res
       .status(StatusCodes.OK)
-      .json({ msg: { user: { name: user.name, token } } })
+      .json({ msg: { user: { name: user.name, role: user.role, token } } })
   }
 }
