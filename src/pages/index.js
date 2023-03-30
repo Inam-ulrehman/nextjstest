@@ -53,12 +53,16 @@ export default function Home() {
         <meta name='og:image' content={ogImage} />
         <meta property='og:type' content='website' />
         <meta property='og:locale' content='en_CA' />
+        <meta
+          name='google-site-verification'
+          content='Bkhg2CqT-HR3o-RNv-PgzjKiWc0AUJKl1QL7C2ITCZ0'
+        />
         <meta name='og:description' content={titleCase(description)} />
       </Head>
 
       <Wrapper>
         <Landing />
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <LandingSecond />
         <FeatureSection />
         <LandingThird />
