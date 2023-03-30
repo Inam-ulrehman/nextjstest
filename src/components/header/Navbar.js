@@ -1,12 +1,11 @@
 import { Icons } from '@/styles/Icons'
-import { portfoliosData } from '@/utils/data'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Logo } from './Logo'
 import NavbarDrawer from './NavbarDrawer'
-import ServicesDropdown from './ServicesDropdown'
+
 const initialState = {
   showNavbarDrawer: false,
   showPortfolios: false,
@@ -31,28 +30,6 @@ const Navbar = () => {
           <Link href={'/blog'}>Blog</Link>
         </li>
 
-        {/* ======Services======= */}
-        <li className={router.pathname.startsWith('/services') ? 'active' : ''}>
-          <Link href={'/services'}>Services{Icons.dropDown}</Link>
-          <ul className='desktop-navbar-dropdown desktop-navbar-dropdown-services'>
-            <ServicesDropdown />
-          </ul>
-        </li>
-        {/* ========portfolio====== */}
-        <li className={router.pathname === '/portfolios' ? 'active' : ''}>
-          <Link href={'/portfolios'}>Portfolios{Icons.dropDown}</Link>
-          <ul className='desktop-navbar-dropdown'>
-            {portfoliosData.map((item, index) => {
-              return (
-                <li className='portfolios' key={index}>
-                  <Link href={item.path} target='_blank'>
-                    {item.title}
-                  </Link>{' '}
-                </li>
-              )
-            })}
-          </ul>
-        </li>
         <li className={router.pathname === '/contact' ? 'active' : ''}>
           <Link href={'/contact'}>Contact</Link>
         </li>

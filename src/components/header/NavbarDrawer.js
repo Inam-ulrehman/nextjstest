@@ -1,21 +1,18 @@
 import { Icons } from '@/styles/Icons'
-import { portfoliosData, servicesData } from '@/utils/data'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 
+const servicesData = [
+  { title: 'mango' },
+  { title: 'apple' },
+  { title: 'banana' },
+]
 const NavbarDrawer = ({ state, setState, handleNavbarDrawer }) => {
   const router = useRouter()
   const servicesHeightRef = useRef()
-  const portfoliosHeightRef = useRef()
 
-  const handlePortfolios = () => {
-    setState({
-      ...state,
-      showPortfolios: !state.showPortfolios,
-    })
-  }
   const handleServices = (e) => {
     setState({ ...state, showServices: !state.showServices })
   }
@@ -35,36 +32,6 @@ const NavbarDrawer = ({ state, setState, handleNavbarDrawer }) => {
           <Link href={'/blog'}>Blog</Link>
         </li>
         {/* Drawer Drop Down */}
-        {/* portfolios */}
-        <li className={router.pathname === '/portfolios' ? 'active ' : ''}>
-          <button type='button' onClick={handlePortfolios}>
-            Portfolios <i>{Icons.dropDown}</i>
-          </button>
-          <div
-            className='drawer-dropdown'
-            style={{
-              height: `${
-                state.showPortfolios
-                  ? `${portfoliosHeightRef?.current?.clientHeight}px`
-                  : '0px'
-              }`,
-              overflow: 'hidden',
-            }}
-          >
-            <ul ref={portfoliosHeightRef}>
-              {portfoliosData.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <Link href={item.path} target='_blank'>
-                      {item.title}
-                    </Link>{' '}
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </li>
-
         {/* services */}
         <li>
           <button type='button' onClick={handleServices}>

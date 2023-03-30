@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import PortfolioCard from '../cards/PortfolioCard'
 
 const FeatureSection = () => {
   const { headerHeight } = useSelector((state) => state.websitecontent)
@@ -9,17 +8,15 @@ const FeatureSection = () => {
   return (
     <Wrapper>
       <div className='heading-title'>
-        <span>PORTFOLIOS</span>
+        <span>Feature</span>
       </div>
-
-      <PortfolioCard />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   z-index: 1;
-  background-color: var(--grey-05);
+
   .heading-title {
     font-weight: 700;
     text-align: center;

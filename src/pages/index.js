@@ -62,9 +62,9 @@ export default function Home() {
 
       <Wrapper>
         <Landing />
-        {/* <ServicesSection /> */}
-        <LandingSecond />
         <FeatureSection />
+        <LandingSecond />
+        <ServicesSection />
         <LandingThird />
         <ContactSection />
         {/* Google script to add social media */}

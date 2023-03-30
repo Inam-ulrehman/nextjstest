@@ -11,11 +11,6 @@ const ServicesSection = () => {
       <div className='heading-title'>
         <span>SERVICES</span>
       </div>
-      <div className='container'>
-        {data?.map((item, index) => {
-          return <ProductCard item={item} key={index} />
-        })}
-      </div>
     </Wrapper>
   )
 }
@@ -32,15 +27,6 @@ const Wrapper = styled.div`
     span {
       border-bottom: 4px solid var(--primary-5);
     }
-  }
-  @media (min-width: 620px) {
-    .heading-title {
-    }
-  }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 `
 export default ServicesSection
