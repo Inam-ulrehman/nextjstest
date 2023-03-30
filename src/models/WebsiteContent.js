@@ -2,6 +2,12 @@ import mongoose from 'mongoose'
 
 const SampleSchema = new mongoose.Schema(
   {
+    landing: {
+      heading: { type: String, lowercase: true, trim: true },
+      subHeading: { type: String, lowercase: true, trim: true },
+      description: { type: String, lowercase: true, trim: true },
+      image: { type: String, lowercase: true, trim: true },
+    },
     name: {
       type: String,
       required: [true, 'Please provide name'],
@@ -16,35 +22,10 @@ const SampleSchema = new mongoose.Schema(
       min: 3,
       max: 1000,
     },
-    image: {
-      type: String,
-      required: [true, 'Please provide image'],
-      maxLength: 100,
-    },
-    company: {
-      type: String,
-      required: [true, 'Please provide company'],
-      maxLength: 100,
-    },
-    description: {
-      type: String,
-      required: [true, 'Please provide description'],
-      maxLength: 100,
-    },
-    category: {
-      type: String,
-      required: [true, 'Please provide category'],
-      maxLength: 100,
-    },
     shipping: {
       type: Boolean,
       enum: [true, false],
       default: false,
-    },
-    quantity: {
-      type: Number,
-      required: [true, 'Please provide quantity'],
-      max: 1000,
     },
     slot: {
       startDate: { type: String, lowercase: true, trim: true },
