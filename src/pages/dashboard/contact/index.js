@@ -1,7 +1,7 @@
-import List from '@/components/contact/List'
-import Pagination from '@/components/contact/Pagination'
-import Search from '@/components/contact/Search'
-import Sort from '@/components/contact/Sort'
+import List from '@/components/dashboard/contact/List'
+import Pagination from '@/components/dashboard/contact/Pagination'
+import Search from '@/components/dashboard/contact/Search'
+import Sort from '@/components/dashboard/contact/Sort'
 import DashboardLayout from '@/components/dashboard/dashboard-layout'
 import Head from 'next/head'
 

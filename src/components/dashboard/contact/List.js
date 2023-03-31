@@ -14,7 +14,7 @@ import {
   showDeleteAllWarning,
   showDeleteWarning,
 } from '@/features/websitecontent/websitecontentSlice'
-import { DeleteAllWarning, DeleteWarning } from '../warnings'
+import { DeleteAllWarning, DeleteWarning } from '../../warnings'
 import { Icons } from '@/styles/Icons'
 
 const List = () => {
