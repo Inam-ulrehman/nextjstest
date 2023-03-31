@@ -11,6 +11,7 @@ import { titleCase } from '@/utils/helper'
 import { googleBusinessSocialLinksAttach } from '@/utils/scripts'
 import Head from 'next/head'
 import Script from 'next/script'
+import styled from 'styled-components'
 const {
   author,
   description,
@@ -71,3 +72,5 @@ export default function Home() {
     </>
   )
 }
+
+const Wrapper = styled.div``
