@@ -1,5 +1,5 @@
 import dbConnect from '@/lib/dbConnect'
-import mongooseErrorHandler from '@/lib/mongoose-error-handler'
+import mongooseErrorHandler from '@/lib/errors/mongoose-error-handler'
 import Users from '@/models/User'
 import { StatusCodes } from 'http-status-codes'
 import multer from 'multer'

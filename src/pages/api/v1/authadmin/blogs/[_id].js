@@ -1,6 +1,6 @@
 import dbConnect from '@/lib/dbConnect'
 import { BadRequestError } from '@/lib/errors'
-import mongooseErrorHandler from '@/lib/mongoose-error-handler'
+import mongooseErrorHandler from '@/lib/errors/mongoose-error-handler'
 import Blog from '@/models/Blog'
 
 import { StatusCodes } from 'http-status-codes'

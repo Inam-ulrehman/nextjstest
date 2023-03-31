@@ -1,5 +1,5 @@
 import dbConnect from '@/lib/dbConnect'
-import mongooseErrorHandler from '@/lib/mongoose-error-handler'
+import mongooseErrorHandler from '@/lib/errors/mongoose-error-handler'
 import { UserRegistrationEmail } from '@/lib/sendgrid/UserRegistrationEmail'
 import User from '@/models/User'
 import { StatusCodes } from 'http-status-codes'
