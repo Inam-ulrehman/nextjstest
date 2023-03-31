@@ -1,11 +1,7 @@
-import { servicesData } from '@/utils/data'
 import React from 'react'
 import styled from 'styled-components'
-import ProductCard from '../cards/ProductCard'
 
 const ServicesSection = () => {
-  const data = servicesData
-
   return (
     <Wrapper>
       <div className='heading-title'>

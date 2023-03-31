@@ -59,3 +59,6 @@ const Wrapper = styled.div`
   }
 `
 export default DeleteAllWarning
+
+// Require action like below
+//  action={() => dispatch(deleteManyBlogsThunk(blogs.deleteMany))}

@@ -56,3 +56,7 @@ const Wrapper = styled.div`
   }
 `
 export default DeleteWarning
+
+// require action like below
+
+//  action={() => dispatch(deleteBlogsThunk(blogs.deleteId))}
