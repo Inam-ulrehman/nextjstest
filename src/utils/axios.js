@@ -9,15 +9,6 @@ export const customFetch = axios.create({
 })
 
 //
-
-export const fetchPortfolios = async () => {
-  const boltSign = await axios('https://boltsign.herokuapp.com/')
-  const jobProjectRehman = await axios(
-    'https://jobprojectrehman.herokuapp.com/'
-  )
-  const aryanaSpa = await axios('https://aryanaspa.herokuapp.com/')
-}
-
 //=================== vercel deploy============================
 
 export const vercelDeploy = async () => {
