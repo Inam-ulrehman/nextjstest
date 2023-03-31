@@ -13,7 +13,9 @@ export default async function handler(req, res) {
   if (method === 'POST') {
     try {
       const user = await User.findById({ _id: userId })
-      const author = `${user?.name} ${user?.lastName}`
+      console.log(user)
+      const author = `${user.name} ${user.lastName}`
+      console.log(author)
       const blog = await Blogs.create({
         image,
         heading,

@@ -33,7 +33,10 @@ const PostBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (image.length === 0) {
-      toast.warning('Please upload image')
+      return toast.warning('Please upload image')
+    }
+    if (!heading || !description || !blogHeading || !blogDescription) {
+      return toast.warning('Please fill all inputs')
     }
 
     dispatch(createBlogThunk(blogs))
@@ -57,7 +60,7 @@ const PostBlog = () => {
         <div className='input'>
           <UploadImage
             cbFunction={cbFunction}
-            path={'/authadmin/images/upload'}
+            path={'/authadmin/images/blog'}
           />
           <form className='form' onSubmit={handleSubmit}>
             {/* heading */}

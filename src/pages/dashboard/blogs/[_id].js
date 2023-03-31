@@ -52,7 +52,7 @@ const SingleBlog = () => {
         <div className='input'>
           <UploadImage
             cbFunction={cbFunction}
-            path={'/authadmin/images/upload'}
+            path={'/authadmin/images/blog'}
           />
           <form className='form' onSubmit={handleSubmit}>
             {/* heading */}
