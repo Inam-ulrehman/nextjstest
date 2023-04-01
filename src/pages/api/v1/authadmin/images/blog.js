@@ -35,7 +35,7 @@ export default async function handler(req, res) {
         const result = await cloudinary.uploader.upload(path, {
           use_filename: true,
           unique_filename: false,
-          folder: 'inamwebsolutions-nextjs/blogs',
+          folder: 'inamwebsolutions-nextjs/testing',
           width: '1200',
           height: '628',
           crop: 'fill',
