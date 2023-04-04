@@ -1,5 +1,6 @@
 import List from '@/components/samples/List'
 import Pagination from '@/components/samples/Pagination'
+import { useSampleData } from '@/features/samples/swr'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
@@ -10,34 +11,32 @@ const initialState = {
 const Sample = () => {
   const [state, setState] = useState(initialState)
   const { page, limit } = state
+  const { data, isLoading, error } = useSampleData({ page, limit })
+
+  const { data: preloadData } = useSampleData({ page: page + 1, limit })
 
   return (
-    <div>
+    <Wrapper>
       <div className='title'>
         <strong>{page}</strong>
       </div>
       {/* List */}
-      <List page={page} limit={limit} />
+      <List data={data} />
       <div style={{ display: 'none' }}>
-        <List page={page + 1} limit={limit} />
+        <List data={preloadData} />
       </div>
       {/* pagination buttons */}
-      <Pagination state={state} setState={setState} />
-    </div>
+      <Pagination
+        state={state}
+        setState={setState}
+        nbHits={data?.data?.nbHits}
+      />
+    </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  min-height: 50px;
-  text-align: center;
-  box-shadow: var(--shadow-3);
-  margin: 0.2rem auto;
-  padding: 0.5rem;
-  p {
-    margin: 0;
-  }
-  max-width: fit-content;
-  background-color: var(--white);
+  min-height: 100vh;
 `
 
 export default Sample

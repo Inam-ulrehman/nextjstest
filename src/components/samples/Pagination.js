@@ -1,14 +1,12 @@
 import { customFetch } from '@/utils/axios'
 import React from 'react'
 import styled from 'styled-components'
-import useSWRConfig from 'swr'
 
-const Pagination = ({ state, setState }) => {
-  const { data } = useSWRConfig('/samples', customFetch)
-  if (!state || !data) {
+const Pagination = ({ state, setState, nbHits }) => {
+  if (!state) {
     return
   }
-  const totalPages = Math.ceil(data.data.nbHits / state.limit)
+  const totalPages = Math.ceil(nbHits / state.limit)
   const pagesArray = Array.from({ length: totalPages }, (v, i) => i + 1)
 
   //
@@ -31,33 +29,40 @@ const Pagination = ({ state, setState }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setState({ ...state, page: index })
   }
+
   return (
     <Wrapper className='btn-container'>
-      <button className='prev' onClick={handlePrev}>
-        Prev
-      </button>
+      {nbHits && pagesArray.length !== 1 && (
+        <>
+          <button className='prev' onClick={handlePrev}>
+            Prev
+          </button>
 
-      <div className='index-button-container'>
-        {pagesArray
-          .map((item, index) => {
-            return (
-              <button
-                className={
-                  state.page === item ? `active index-button` : 'index-button'
-                }
-                onClick={() => handleIndex(item)}
-                key={index}
-              >
-                {item}
-              </button>
-            )
-          })
-          .slice(state.page - 1, state.page + 3)}
-      </div>
-      {state.page < totalPages - 3 && <strong>...</strong>}
-      <button className='next' onClick={handleNext}>
-        Next
-      </button>
+          <div className='index-button-container'>
+            {pagesArray
+              .map((item, index) => {
+                return (
+                  <button
+                    className={
+                      state.page === item
+                        ? `active index-button`
+                        : 'index-button'
+                    }
+                    onClick={() => handleIndex(item)}
+                    key={index}
+                  >
+                    {item}
+                  </button>
+                )
+              })
+              .slice(state.page - 1, state.page + 3)}
+          </div>
+          {state.page < totalPages - 3 && <strong>...</strong>}
+          <button className='next' onClick={handleNext}>
+            Next
+          </button>
+        </>
+      )}
     </Wrapper>
   )
 }

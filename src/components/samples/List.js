@@ -1,15 +1,11 @@
-import { useSampleData } from '@/features/samples/swr'
-import { customFetch } from '@/utils/axios'
 import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const List = ({ page, limit }) => {
-  const { data, error, isLoading } = useSampleData({ page, limit })
-
-  if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
-
+const List = ({ data }) => {
+  if (!data) {
+    return <div>Loading...</div>
+  }
   return (
     <Wrapper>
       {data.data.result.map((item, index) => {
