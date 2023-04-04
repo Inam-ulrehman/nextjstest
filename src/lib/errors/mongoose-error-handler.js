@@ -26,7 +26,9 @@ const mongooseErrorHandler = async (error, res) => {
     customError.msg = `No item found with id : ${err.value._id}`
     customError.statusCode = 404
   }
-  return res.status(customError.statusCode).json({ msg: customError.msg })
+  return res
+    .status(customError.statusCode)
+    .json({ success: false, msg: customError.msg })
 }
 
 export default mongooseErrorHandler

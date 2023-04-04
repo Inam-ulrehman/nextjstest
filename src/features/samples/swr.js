@@ -1,33 +1,36 @@
 import { customFetch } from '@/utils/axios'
+import { useRouter } from 'next/router'
+import { toast } from 'react-toastify'
 import useSWRConfig from 'swr'
 
-const useSampleData = () => {
-  const { data, error, mutate } = useSWRConfig('/samples', customFetch)
+const useSampleData = ({ page, limit }) => {
+  const { data, error, isLoading } = useSWRConfig(
+    `/samples?page=${page}&limit=${limit}`,
+    customFetch
+  )
 
   return {
     data,
-    isLoading: !error && !data,
-    isError: error,
-    mutate,
+    isLoading,
+    error,
   }
 }
 const singleSample = (id) => {
-  const { data, error, mutate } = useSWRConfig(`/samples/${id}`, customFetch)
+  const { data, isLoading, error } = useSWRConfig(`/samples/${id}`, customFetch)
 
   return {
     data,
-    isLoading: !error && !data,
-    isError: error,
-    mutate,
+    isLoading,
+    error,
   }
 }
 
 const deleteSample = async (id) => {
   try {
     const response = await customFetch.delete(`/samples/${id}`)
-    console.log(response)
+    toast.success(response.data.msg)
   } catch (error) {
-    console.log(error)
+    toast.error(error.response.data.msg)
   }
 }
 export { useSampleData, singleSample, deleteSample }

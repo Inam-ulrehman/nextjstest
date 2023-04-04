@@ -11,21 +11,32 @@ export default async function handler(req, res) {
   if (method === 'GET') {
     try {
       const result = await Sample.findById({ _id: query.id })
+      if (!result) {
+        return res
+          .status(StatusCodes.BAD_REQUEST)
+          .json({ success: false, msg: 'No record found' })
+      }
       return res.status(200).json({ success: true, result })
     } catch (error) {
       return mongooseErrorHandler(error, res)
     }
   }
+
+  // Delete a sample
   if (method === 'DELETE') {
     try {
       const result = await Sample.findByIdAndDelete({ _id: query.id })
-      return res.status(200).json({ success: true, result })
+      return res
+        .status(StatusCodes.OK)
+        .json({ success: true, msg: 'Record is deleted' })
     } catch (error) {
       return mongooseErrorHandler(error, res)
     }
   }
   // Create a Sample
   if (method === 'POST') {
-    return res.status(200).json({ name: 'Post your data' })
+    return res
+      .status(StatusCodes.OK)
+      .json({ success: true, msg: 'Post your data' })
   }
 }

@@ -85,16 +85,7 @@ export const isObjectEmpty = (obj) => {
   return Object.keys(obj).length === 0
 }
 
-// ============Paginate=========
-export const paginate = (data) => {
-  const itemsPerPage = 10
-  const pages = Math.ceil(data.length / itemsPerPage)
-  const newData = Array.from({ length: pages }, (_, index) => {
-    const start = index * itemsPerPage
-    return data.slice(start, start + itemsPerPage)
-  })
-  return newData
-}
+// ============Paginate========
 
 // ====Dynamic way to reduce rerender and javascript
 
