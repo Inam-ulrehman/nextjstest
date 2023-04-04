@@ -9,16 +9,17 @@ const initialState = {
 }
 const Sample = () => {
   const [state, setState] = useState(initialState)
+  const { page, limit } = state
 
   return (
     <div>
       <div className='title'>
-        <strong>{state.page}</strong>
+        <strong>{page}</strong>
       </div>
       {/* List */}
-      <List page={state.page} limit={state.limit} />
+      <List page={page} limit={limit} />
       <div style={{ display: 'none' }}>
-        <List page={state.page + 1} limit={state.limit} />
+        <List page={page + 1} limit={limit} />
       </div>
       {/* pagination buttons */}
       <Pagination state={state} setState={setState} />
