@@ -60,7 +60,7 @@ const SingleBlog = ({ data }) => {
         width={1200}
         height={628}
         alt={heading}
-        src={image[0].secure_url}
+        src={image[0].public_id}
         twitterTitle={titleCase(heading)}
       ></CldOgImage>
 
