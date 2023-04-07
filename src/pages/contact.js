@@ -1,5 +1,5 @@
 import FormInput from '@/components/FormInput'
-import { Button } from '@/styles/Wrappers/Buttons'
+
 import { customFetch } from '@/utils/axios'
 import { imagesData, websiteContent } from '@/utils/data'
 import { CldImage } from 'next-cloudinary'
@@ -114,13 +114,9 @@ const Contact = () => {
               value={state.message}
               onChange={handleChange}
             />
-            {state.isLoading ? (
-              <Button disabled={state.isLoading} type='submit'>
-                <span className='loading-span'></span> Submitting...
-              </Button>
-            ) : (
-              <Button type='submit'>Submit</Button>
-            )}
+            <button type='submit' className='btn' disabled={state.isLoading}>
+              Submit
+            </button>
           </form>
         </div>
       </Wrapper>

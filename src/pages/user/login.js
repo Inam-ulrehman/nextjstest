@@ -8,7 +8,6 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import styled from 'styled-components'
 import Cookies from 'js-cookie'
-import { Button } from '@/styles/Wrappers/Buttons'
 
 const initialState = {
   name: '',
