@@ -12,10 +12,6 @@ const Sample = () => {
   const [state, setState] = useState(initialState)
   const { page, limit } = state
   const { data, isLoading, error } = useSampleData({ page, limit })
-
-  if (!data) {
-    return
-  }
   const { data: preloadData } = useSampleData({ page: page + 1, limit })
   return (
     <Wrapper>
