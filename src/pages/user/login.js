@@ -126,15 +126,15 @@ const Login = () => {
                   ? 'Are you not a member ?'
                   : 'Are you a member ?'}
               </span>
-              <Button
-                outlined
+              <button
+                className='btn'
                 type='button'
                 onClick={() =>
                   setState({ ...state, isMember: !state.isMember })
                 }
               >
                 {state.isMember ? 'Register' : 'Login'}
-              </Button>
+              </button>
             </div>
           </form>
         </div>
