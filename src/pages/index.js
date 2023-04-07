@@ -1,17 +1,10 @@
-import {
-  FeatureSection,
-  Landing,
-  LandingSecond,
-  LandingThird,
-  ServicesSection,
-} from '@/components/home'
-import ContactSection from '@/components/home/ContactSection'
+import { Landing } from '@/components/home'
 import { websiteContent } from '@/utils/data'
 import { titleCase } from '@/utils/helper'
 import { googleBusinessSocialLinksAttach } from '@/utils/scripts'
 import Head from 'next/head'
 import Script from 'next/script'
-import styled from 'styled-components'
+
 const {
   author,
   description,
@@ -55,22 +48,16 @@ export default function Home() {
         <meta name='og:description' content={titleCase(description)} />
       </Head>
 
-      <Wrapper>
+      <div>
         <Landing />
-        <FeatureSection />
-        <LandingSecond />
-        <ServicesSection />
-        <LandingThird />
-        <ContactSection />
+
         {/* Google script to add social media */}
-        <Script
+        {/* <Script
           type='application/ld+json'
           dangerouslySetInnerHTML={googleBusinessSocialLinksAttach()}
           key='google-jsonld'
-        />
-      </Wrapper>
+        /> */}
+      </div>
     </>
   )
 }
-
-const Wrapper = styled.div``
