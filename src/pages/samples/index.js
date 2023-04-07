@@ -13,10 +13,10 @@ const Sample = () => {
   const { page, limit } = state
   const { data, isLoading, error } = useSampleData({ page, limit })
 
-  const { data: preloadData } = useSampleData({ page: page + 1, limit })
   if (!data) {
     return
   }
+  const { data: preloadData } = useSampleData({ page: page + 1, limit })
   return (
     <Wrapper>
       <div className='title'>
