@@ -1,11 +1,21 @@
-import { Button } from '@nextui-org/react'
+import { Button, Text } from '@nextui-org/react'
 import React from 'react'
 import styled from 'styled-components'
 
 const Test = () => {
   return (
     <Wrapper>
-      <Button>Hello</Button>{' '}
+      <Button className='button-g'>Hello</Button>
+      <Text
+        css={{
+          color: '$blue800',
+          fontSize: '$sm',
+          padding: '$2 $4',
+          backgroundColor: '$accents0',
+        }}
+      >
+        Using tokens
+      </Text>
     </Wrapper>
   )
 }
